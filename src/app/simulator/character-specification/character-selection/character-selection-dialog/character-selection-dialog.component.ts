@@ -11,6 +11,7 @@ export class CharacterSelectionDialogComponent implements OnInit {
 
   form: FormGroup;
   description: string;
+  imageLocations: string[];
 
   constructor(
     // private fb: FormBuilder,
@@ -27,11 +28,15 @@ export class CharacterSelectionDialogComponent implements OnInit {
     //     });
   }
 
+  fillImageLocations() {
+    // TODO image service
+  }
+
   save() {
-    this.dialogRef.close(this.form.value);
+    // this.dialogRef.close(this.form.value);
   }
 
   close() {
-    this.dialogRef.close();
+   // this.dialogRef.close();
   }
 }

@@ -4,6 +4,7 @@ import { SimulatorComponent } from './simulator.component';
 import { MatTabsModule } from '@angular/material/tabs';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { CharacterSpecificationModule } from './character-specification/character-specification.module';
+import { SharedModule } from '../shared/shared.module';
 
 
 
@@ -13,7 +14,8 @@ import { CharacterSpecificationModule } from './character-specification/characte
     CommonModule,
     MatTabsModule,
     CharacterSpecificationModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    SharedModule
   ],
   exports: [SimulatorComponent]
 })
