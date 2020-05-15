@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 
 
 import { CharacterSelectionComponent } from './character-selection/character-selection.component';
 import { CharacterCustomisationComponent } from './character-customisation/character-customisation.component';
+import { ICharacter } from 'src/app/models/ICharacter';
 
 @Component({
   selector: 'app-character-specification',
@@ -11,9 +12,15 @@ import { CharacterCustomisationComponent } from './character-customisation/chara
 })
 export class CharacterSpecificationComponent implements OnInit {
 
+  private selectedCharacter: ICharacter;
+  @Input() simulationType: string;
   constructor() { }
 
   ngOnInit() {
+  }
+
+  characterSelected(character: ICharacter) {
+    this.selectedCharacter = character;
   }
 
 }

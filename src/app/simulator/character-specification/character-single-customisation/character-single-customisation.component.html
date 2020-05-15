@@ -1,0 +1,20 @@
+<mat-form-field *ngFor="let item of [1,2]">
+  <mat-label>Leader Skill</mat-label>
+  <mat-select [formControl]="leaderSkillsControl" id="leaderSkillSelect{{item}}">
+    <mat-option>-- None --</mat-option>
+    <mat-optgroup *ngFor="let group of leaderSkillGroups" [label]="group.name">
+      <mat-option *ngFor="let leaderSkill of group.leaderSkills" [value]="leaderSkill.value">
+        {{leaderSkill.viewValue}}
+      </mat-option>
+    </mat-optgroup>
+  </mat-select>
+</mat-form-field>
+<div>
+  <mat-label>Active Links</mat-label>
+  <div *ngFor="let link of character?.LinkSkills" class="linkSkillCheckbox">
+    <mat-checkbox class="linkSkillCheckbox">{{link}}</mat-checkbox>
+  </div>
+</div>
+<div>
+  
+</div>

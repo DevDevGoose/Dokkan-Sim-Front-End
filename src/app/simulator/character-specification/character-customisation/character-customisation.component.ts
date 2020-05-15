@@ -1,4 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input,EventEmitter } from '@angular/core';
+import { ICharacter } from 'src/app/models/ICharacter';
+import { FormsModule, FormControl, Validators } from '@angular/forms';
+
 
 @Component({
   selector: 'app-character-customisation',
@@ -6,10 +9,183 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./character-customisation.component.scss']
 })
 export class CharacterCustomisationComponent implements OnInit {
+  private selectedCharacter;
+  rainbow = false;
+  freeDupe = false;
+  topLeft = false;
+  topRight = false;
+  bottomLeft = false;
+  bottomRight = false;
+
+  HPAdditionalFormControl = new FormControl('', Validators.required);
+  HPCriticalFormControl = new FormControl('', Validators.required);
+
+  additionalAttackNumbers = [0, 3, 6, 9, 12, 15];
+  criticalNumbers = [0, 3, 6, 9, 12, 15];
+  additionalSelectedOption = 0;
+  criticalSelectedOption = 0;
+
+  @Input()
+  set character(character: ICharacter) {
+    this.selectedCharacter = character;
+    console.log(this.selectedCharacter);
+    if (this.selectedCharacter !== undefined) {
+      this.setTypeHPModifier();
+    }
+  }
+
 
   constructor() { }
 
   ngOnInit() {
   }
+
+  setTypeHPModifier() {
+    if (this.selectedCharacter.Type === 'AGL' || this.selectedCharacter.Type === 'PHY') {
+      if (this.topLeft === true && this.bottomRight === true) {
+        this.additionalAttackNumbers = [5, 8, 11, 14, 17, 20];
+        this.criticalNumbers = [0, 3, 6, 9, 12, 15];
+        this.additionalSelectedOption = 11;
+        this.criticalSelectedOption = 15;
+      } else if (this.topLeft === true) {
+        this.additionalAttackNumbers = [5, 8, 11];
+        this.criticalNumbers = [0, 3, 6];
+        this.additionalSelectedOption = 8;
+        this.criticalSelectedOption = 6;
+      } else if (this.bottomRight === true) {
+        this.additionalAttackNumbers = [5, 8, 11, 14];
+        this.criticalNumbers = [0, 3, 6, 9];
+        this.additionalSelectedOption = 8;
+        this.criticalSelectedOption = 9;
+      } else if (this.freeDupe === true) {
+        this.additionalAttackNumbers = [5];
+        this.criticalNumbers = [0];
+        this.additionalSelectedOption = 5;
+        this.criticalSelectedOption = 0;
+      } else {
+        this.additionalAttackNumbers = [0];
+        this.criticalNumbers = [0];
+        this.additionalSelectedOption = 0;
+        this.criticalSelectedOption = 0;
+      }
+    } else if (this.selectedCharacter.Type === 'TEQ' || this.selectedCharacter.Type === 'STR') {
+      if (this.topLeft === true && this.bottomRight === true) {
+        this.additionalAttackNumbers = [0, 3, 6, 9, 12, 15];
+        this.criticalNumbers = [5, 8, 11, 14, 17, 20];
+        this.additionalSelectedOption = 6;
+        this.criticalSelectedOption = 20;
+      } else if (this.topLeft === true) {
+        this.additionalAttackNumbers = [0, 3, 6];
+        this.criticalNumbers = [5, 8, 11];
+        this.additionalSelectedOption = 3;
+        this.criticalSelectedOption = 11;
+      } else if (this.bottomRight === true) {
+        this.additionalAttackNumbers = [0, 3, 6, 9];
+        this.criticalNumbers = [5, 8, 11, 14];
+        this.additionalSelectedOption = 3;
+        this.criticalSelectedOption = 14;
+      } else if (this.freeDupe === true) {
+        this.additionalAttackNumbers = [0];
+        this.criticalNumbers = [5];
+        this.additionalSelectedOption = 0;
+        this.criticalSelectedOption = 5;
+      } else {
+        this.additionalAttackNumbers = [0];
+        this.criticalNumbers = [0];
+        this.additionalSelectedOption = 0;
+        this.criticalSelectedOption = 0;
+      }
+    }
+  }
+
+  setHPNumberOptions() {
+    if (this.selectedCharacter !== undefined) {
+      if (this.selectedCharacter.Type === 'AGL' || this.selectedCharacter.Type === 'PHY') {
+        this.additionalAttackNumbers = [5];
+        this.criticalNumbers = [0];
+      } else if (this.selectedCharacter.Type === 'TEQ' || this.selectedCharacter.Type === 'STR') {
+        this.additionalAttackNumbers = [0];
+        this.criticalNumbers = [5];
+      }
+    }
+  }
+
+  clickedHPSlideToggle(event) {
+    const target = event.source.name;
+    switch (target) {
+      case 'freeDupe':
+        if (this.freeDupe === false) {
+          this.topLeft = false;
+          this.topRight = false;
+          this.bottomLeft = false;
+          this.bottomRight = false;
+          this.rainbow = false;
+        }
+        break;
+
+      case 'topLeft':
+        if (this.topLeft === true) {
+          this.freeDupe = true;
+          if (this.topRight === true && this.bottomLeft === true && this.bottomRight === true) {
+            this.rainbow = true;
+          }
+
+        } else {
+          this.rainbow = false;
+
+        }
+
+        break;
+      case 'topRight':
+        if (this.topRight === true) {
+          this.freeDupe = true;
+          if (this.topLeft === true && this.bottomLeft === true && this.bottomRight === true) {
+            this.rainbow = true;
+          }
+        } else {
+          this.rainbow = false;
+        }
+        break;
+
+      case 'bottomLeft':
+        if (this.bottomLeft === true) {
+          this.freeDupe = true;
+          if (this.topRight === true && this.topLeft === true && this.bottomRight === true) {
+            this.rainbow = true;
+          }
+        } else {
+          this.rainbow = false;
+        }
+        break;
+
+      case 'bottomRight':
+        if (this.bottomRight === true) {
+          this.freeDupe = true;
+          if (this.topRight === true && this.bottomLeft === true && this.topLeft === true) {
+            this.rainbow = true;
+          }
+        } else {
+          this.rainbow = false;
+        }
+        break;
+
+      case 'rainbow':
+        if (this.rainbow === true) {
+          this.freeDupe = true;
+          this.topLeft = true;
+          this.topRight = true;
+          this.bottomLeft = true;
+          this.bottomRight = true;
+        }
+        break;
+
+      default:
+        console.log('clickedHPSlideToggle broken');
+        break;
+    }
+    this.setTypeHPModifier();
+  }
+
+
 
 }

@@ -1,9 +1,28 @@
 <mat-card class="character-specification">
-    <div class="character-selection-section">
-        <app-character-selection></app-character-selection>
+    <div class="character-details">
+        <div class="character-selection-section">
+            <app-character-selection (characterSelected)="characterSelected($event)"></app-character-selection>
+        </div>
+        <div class="character-details-section">
+            <div>
+                <h2>
+                    <span class="character-title">{{selectedCharacter?.Title}}</span> -
+                    <span class="character-name">{{selectedCharacter?.Name}}</span>
+                </h2>
+
+            </div>
+            <div>
+                <span class="character-level">Lv {{selectedCharacter?.MaxLevel}}</span>
+                <span class="character-hp">HP {{selectedCharacter?.MaxHP}}</span>
+                <span class="character-attack">ATK {{selectedCharacter?.MaxATK}}</span>
+                <span class="character-defence">DEF {{selectedCharacter?.MaxDEF}}</span>
+            </div>
+        </div>
     </div>
-    <div class="character-details-section"></div>
     <div class="character-customisation-section">
-        <app-character-customisation></app-character-customisation>
+        <app-character-customisation [character]="selectedCharacter"></app-character-customisation>
+    </div>
+    <div *ngIf="simulationType === 'single'" class="character-customisation-section">
+        <app-character-single-customisation [character]="selectedCharacter"></app-character-single-customisation>
     </div>
 </mat-card>

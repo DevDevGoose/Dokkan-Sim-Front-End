@@ -1,10 +1,11 @@
 <mat-tab-group>
     <mat-tab label="Single">
-        <app-character-specification></app-character-specification>
+        <app-character-specification simulationType="single"></app-character-specification>
     </mat-tab>
     <mat-tab label="Team">
       <h1>TODO: Team Simulator</h1>
       <p>...</p>
+      <app-character-specification *ngFor="let number of [0,1,2,3,4,5,6]" >{{number}}</app-character-specification>
     </mat-tab>
     <mat-tab label="Rotation">
         <h1>TODO: Rotation simulator</h1>

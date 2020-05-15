@@ -1,3 +1,1 @@
-<h2> Working? </h2>
-<div *ngFor=""></div>
-    
+<input type="image" *ngFor="let character of characterList" src="{{ character.ImageSRC }}" style="width: 105px" matTooltip="{{character.Name + ' - ' + character.Title}}" (click)="selectCharacter(character)"/>

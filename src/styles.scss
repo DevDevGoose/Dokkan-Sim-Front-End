@@ -4,3 +4,15 @@ html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 @import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.custom-scrollable-dialog {
+    overflow: auto;
+}
+
+.mat-checkbox-layout {
+    margin-right: 10px;
+}
+
+.mat-label {
+    margin-right: 10px;
+}

@@ -1,6 +1,10 @@
 import { Component, OnInit, Inject } from '@angular/core';
 import { MAT_DIALOG_DATA, MatDialogRef } from '@angular/material';
+import {MatTooltipModule } from '@angular/material';
 import { FormGroup, FormBuilder } from '@angular/forms';
+import characters from '../../../../../assets/output.JSON';
+
+
 
 @Component({
   selector: 'app-character-selection-dialog',
@@ -9,34 +13,24 @@ import { FormGroup, FormBuilder } from '@angular/forms';
 })
 export class CharacterSelectionDialogComponent implements OnInit {
 
-  form: FormGroup;
   description: string;
-  imageLocations: string[];
+  public characterList = characters;
 
   constructor(
-    // private fb: FormBuilder,
-    // private dialogRef: MatDialogRef<CharacterSelectionDialogComponent>,
-    // @Inject(MAT_DIALOG_DATA) data
-    ) {
-
-    // this.description = data.description;
-  }
+    private dialogRef: MatDialogRef<CharacterSelectionDialogComponent>
+    ) { }
 
   ngOnInit() {
-    // this.form = this.fb.group({
-    //   description: [this.description, []]
-    //     });
+    this.fillImageLocations();
   }
 
   fillImageLocations() {
     // TODO image service
+    console.log('TODO image service');
   }
 
-  save() {
-    // this.dialogRef.close(this.form.value);
+  selectCharacter(character) {
+    this.dialogRef.close(character);
   }
 
-  close() {
-   // this.dialogRef.close();
-  }
 }

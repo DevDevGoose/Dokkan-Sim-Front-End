@@ -9,6 +9,9 @@ import { CharacterCustomisationComponent } from './character-customisation/chara
 import { CharacterSpecificationComponent } from './character-specification.component';
 import { MatFormFieldModule } from '@angular/material';
 import { CharacterSelectionDialogComponent } from './character-selection/character-selection-dialog/character-selection-dialog.component';
+import { NgMaterialModule } from 'src/app/ng-material/ng-material.module';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms';
+import { CharacterSingleCustomisationComponent } from './character-single-customisation/character-single-customisation.component';
 
 
 
@@ -17,14 +20,18 @@ import { CharacterSelectionDialogComponent } from './character-selection/charact
     CharacterSpecificationComponent,
     CharacterCustomisationComponent,
     CharacterSelectionComponent,
-    CharacterSelectionDialogComponent
+    CharacterSelectionDialogComponent,
+    CharacterSingleCustomisationComponent
   ],
 
   imports: [
     CommonModule,
     MatCardModule,
     MatDialogModule,
-    MatFormFieldModule
+    MatFormFieldModule,
+    NgMaterialModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   exports: [
     CharacterSpecificationComponent

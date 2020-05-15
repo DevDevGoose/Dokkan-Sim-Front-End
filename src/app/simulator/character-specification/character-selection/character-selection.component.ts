@@ -1,6 +1,8 @@
-import { Component, OnInit } from '@angular/core';
-import { MatDialog, MatDialogConfig } from '@angular/material';
+import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import { MatDialog } from '@angular/material';
+
 import { CharacterSelectionDialogComponent } from './character-selection-dialog/character-selection-dialog.component';
+import { ICharacter } from 'src/app/models/ICharacter';
 
 @Component({
   selector: 'app-character-selection',
@@ -9,14 +11,23 @@ import { CharacterSelectionDialogComponent } from './character-selection-dialog/
 })
 export class CharacterSelectionComponent implements OnInit {
 
-  constructor(public dialog: MatDialog) { }
+  @Output() characterSelected = new EventEmitter<ICharacter>();
+  public ImageSRC = '';
+
+  constructor(
+    public dialog: MatDialog,
+    ) { }
 
   ngOnInit() {
   }
 
 
   openDialog(): void {
-    const dialogConfig = new MatDialogConfig();
-    this.dialog.open(CharacterSelectionDialogComponent, dialogConfig);
+    this.dialog.open(CharacterSelectionDialogComponent, { panelClass: 'custom-scrollable-dialog' })
+    .afterClosed()
+    .subscribe(result => {
+      this.characterSelected.emit(result);
+      this.ImageSRC = result.ImageSRC;
+    });
   }
 }
