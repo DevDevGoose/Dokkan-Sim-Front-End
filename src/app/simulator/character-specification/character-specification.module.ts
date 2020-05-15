@@ -7,7 +7,7 @@ import { MatDialogModule } from '@angular/material/dialog';
 import { CharacterSelectionComponent } from './character-selection/character-selection.component';
 import { CharacterCustomisationComponent } from './character-customisation/character-customisation.component';
 import { CharacterSpecificationComponent } from './character-specification.component';
-import { MatFormFieldModule } from '@angular/material';
+import { MatFormFieldModule } from '@angular/material/form-field';
 import { CharacterSelectionDialogComponent } from './character-selection/character-selection-dialog/character-selection-dialog.component';
 import { NgMaterialModule } from 'src/app/ng-material/ng-material.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';

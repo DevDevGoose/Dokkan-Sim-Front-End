@@ -1,5 +1,5 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
-import { MatDialog } from '@angular/material';
+import { MatDialog } from '@angular/material/dialog';
 
 import { CharacterSelectionDialogComponent } from './character-selection-dialog/character-selection-dialog.component';
 import { ICharacter } from 'src/app/models/ICharacter';
