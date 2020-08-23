@@ -1,4 +1,4 @@
-import { Component, OnInit, Input,EventEmitter } from '@angular/core';
+import { Component, OnInit, Input, EventEmitter, Output } from '@angular/core';
 import { ICharacter } from 'src/app/models/ICharacter';
 import { FormsModule, FormControl, Validators } from '@angular/forms';
 
@@ -9,13 +9,19 @@ import { FormsModule, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./character-customisation.component.scss']
 })
 export class CharacterCustomisationComponent implements OnInit {
-  private selectedCharacter;
+  public selectedCharacter;
   rainbow = false;
   freeDupe = false;
   topLeft = false;
   topRight = false;
   bottomLeft = false;
   bottomRight = false;
+  @Output() freeDupeEvent = new EventEmitter<boolean>();
+  @Output() topLeftEvent = new EventEmitter<boolean>();
+  @Output() topRightEvent = new EventEmitter<boolean>();
+  @Output() bottomLeftEvent = new EventEmitter<boolean>();
+  @Output() bottomRightEvent = new EventEmitter<boolean>();
+  @Output() rainbowEvent = new EventEmitter<boolean>();
 
   HPAdditionalFormControl = new FormControl('', Validators.required);
   HPCriticalFormControl = new FormControl('', Validators.required);
@@ -24,13 +30,16 @@ export class CharacterCustomisationComponent implements OnInit {
   criticalNumbers = [0, 3, 6, 9, 12, 15];
   additionalSelectedOption = 0;
   criticalSelectedOption = 0;
+  superAttackSelectedLevel = 10;
 
   @Input()
   set character(character: ICharacter) {
     this.selectedCharacter = character;
-    console.log(this.selectedCharacter);
     if (this.selectedCharacter !== undefined) {
       this.setTypeHPModifier();
+      if (this.superAttackSelectedLevel > this.selectedCharacter.MaxSA) {
+        this.superAttackSelectedLevel = this.selectedCharacter.MaxSA;
+      }
     }
   }
 
@@ -95,6 +104,33 @@ export class CharacterCustomisationComponent implements OnInit {
         this.additionalSelectedOption = 0;
         this.criticalSelectedOption = 0;
       }
+    } else if (this.selectedCharacter.Type === 'INT') {
+      if (this.topLeft === true && this.bottomRight === true) {
+        this.additionalAttackNumbers = [0, 3, 6, 9, 12, 15];
+        this.criticalNumbers = [0, 3, 6, 9, 12, 15];
+        this.additionalSelectedOption = 6;
+        this.criticalSelectedOption = 15;
+      } else if (this.topLeft === true) {
+        this.additionalAttackNumbers = [0, 3, 6];
+        this.criticalNumbers = [0, 3, 6];
+        this.additionalSelectedOption = 3;
+        this.criticalSelectedOption = 6;
+      } else if (this.bottomRight === true) {
+        this.additionalAttackNumbers = [0, 3, 6, 9];
+        this.criticalNumbers = [0, 3, 6, 9];
+        this.additionalSelectedOption = 3;
+        this.criticalSelectedOption = 9;
+      } else if (this.freeDupe === true) {
+        this.additionalAttackNumbers = [0];
+        this.criticalNumbers = [0];
+        this.additionalSelectedOption = 0;
+        this.criticalSelectedOption = 0;
+      } else {
+        this.additionalAttackNumbers = [0];
+        this.criticalNumbers = [0];
+        this.additionalSelectedOption = 0;
+        this.criticalSelectedOption = 0;
+      }
     }
   }
 
@@ -114,6 +150,7 @@ export class CharacterCustomisationComponent implements OnInit {
     const target = event.source.name;
     switch (target) {
       case 'freeDupe':
+        this.freeDupeEvent.emit(this.freeDupe);
         if (this.freeDupe === false) {
           this.topLeft = false;
           this.topRight = false;
@@ -124,19 +161,19 @@ export class CharacterCustomisationComponent implements OnInit {
         break;
 
       case 'topLeft':
+        this.topLeftEvent.emit(this.topLeft);
         if (this.topLeft === true) {
           this.freeDupe = true;
           if (this.topRight === true && this.bottomLeft === true && this.bottomRight === true) {
             this.rainbow = true;
           }
-
         } else {
           this.rainbow = false;
-
         }
 
         break;
       case 'topRight':
+        this.topRightEvent.emit(this.topRight);
         if (this.topRight === true) {
           this.freeDupe = true;
           if (this.topLeft === true && this.bottomLeft === true && this.bottomRight === true) {
@@ -148,6 +185,7 @@ export class CharacterCustomisationComponent implements OnInit {
         break;
 
       case 'bottomLeft':
+        this.bottomLeftEvent.emit(this.bottomLeft);
         if (this.bottomLeft === true) {
           this.freeDupe = true;
           if (this.topRight === true && this.topLeft === true && this.bottomRight === true) {
@@ -159,6 +197,7 @@ export class CharacterCustomisationComponent implements OnInit {
         break;
 
       case 'bottomRight':
+        this.bottomRightEvent.emit(this.bottomRight);
         if (this.bottomRight === true) {
           this.freeDupe = true;
           if (this.topRight === true && this.bottomLeft === true && this.topLeft === true) {
@@ -170,6 +209,7 @@ export class CharacterCustomisationComponent implements OnInit {
         break;
 
       case 'rainbow':
+        this.rainbowEvent.emit(this.rainbow);
         if (this.rainbow === true) {
           this.freeDupe = true;
           this.topLeft = true;
@@ -183,7 +223,9 @@ export class CharacterCustomisationComponent implements OnInit {
         console.log('clickedHPSlideToggle broken');
         break;
     }
-    this.setTypeHPModifier();
+    if (this.selectedCharacter !== undefined) {
+      this.setTypeHPModifier();
+    }
   }
 
 

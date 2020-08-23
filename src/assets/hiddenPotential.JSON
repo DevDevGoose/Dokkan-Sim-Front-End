@@ -1,0 +1,465 @@
+[
+    {
+        "Type": "AGL",
+        "Rank": {
+            "S": {
+                "Free Dupe": {
+                    "HP": 2800,
+                    "ATK": 2800,
+                    "DEF": 2800
+                },
+                "Top Left": {
+                    "HP": 420,
+                    "ATK": 420,
+                    "DEF": 420
+                },
+                "Top Right": {
+                    "HP": 434,
+                    "ATK": 980,
+                    "DEF": 434
+                },
+                "Bottom Left": {
+                    "HP": 966,
+                    "ATK": 420,
+                    "DEF": 966
+                },
+                "Bottom Right": {
+                    "HP": 1820,
+                    "ATK": 2380,
+                    "DEF": 2940
+                }
+            },
+            "A": {
+                "Free Dupe": {
+                    "HP": 2000,
+                    "ATK": 2000,
+                    "DEF": 2000
+                },
+                "Top Left": {
+                    "HP": 300,
+                    "ATK": 300,
+                    "DEF": 300
+                },
+                "Top Right": {
+                    "HP": 310,
+                    "ATK": 700,
+                    "DEF": 310
+                },
+                "Bottom Left": {
+                    "HP": 690,
+                    "ATK": 300,
+                    "DEF": 690
+                },
+                "Bottom Right": {
+                    "HP": 1300,
+                    "ATK": 1700,
+                    "DEF": 2100
+                }
+            },
+            "B": {
+                "Free Dupe": {
+                    "HP": 1200,
+                    "ATK": 1200,
+                    "DEF": 1200
+                },
+                "Top Left": {
+                    "HP": 180,
+                    "ATK": 180,
+                    "DEF": 180
+                },
+                "Top Right": {
+                    "HP": 186,
+                    "ATK": 420,
+                    "DEF": 186
+                },
+                "Bottom Left": {
+                    "HP": 414,
+                    "ATK": 180,
+                    "DEF": 414
+                },
+                "Bottom Right": {
+                    "HP": 780,
+                    "ATK": 1020,
+                    "DEF": 1260
+                }
+            }
+        }
+    },
+    {
+        "Type": "TEQ",
+        "Rank": {
+            "S": {
+                "Free Dupe": {
+                    "HP": 2800,
+                    "ATK": 2800,
+                    "DEF": 2800
+                },
+                "Top Left": {
+                    "HP": 420,
+                    "ATK": 420,
+                    "DEF": 420
+                },
+                "Top Right": {
+                    "HP": 434,
+                    "ATK": 980,
+                    "DEF": 434
+                },
+                "Bottom Left": {
+                    "HP": 966,
+                    "ATK": 420,
+                    "DEF": 966
+                },
+                "Bottom Right": {
+                    "HP": 1820,
+                    "ATK": 2940,
+                    "DEF": 2380
+                }
+            },
+            "A": {
+                "Free Dupe": {
+                    "HP": 2000,
+                    "ATK": 2000,
+                    "DEF": 2000
+                },
+                "Top Left": {
+                    "HP": 300,
+                    "ATK": 300,
+                    "DEF": 300
+                },
+                "Top Right": {
+                    "HP": 310,
+                    "ATK": 700,
+                    "DEF": 310
+                },
+                "Bottom Left": {
+                    "HP": 690,
+                    "ATK": 300,
+                    "DEF": 690
+                },
+                "Bottom Right": {
+                    "HP": 1300,
+                    "ATK": 2100,
+                    "DEF": 1700
+                }
+            },
+            "B": {
+                "Free Dupe": {
+                    "HP": 1200,
+                    "ATK": 1200,
+                    "DEF": 1200
+                },
+                "Top Left": {
+                    "HP": 180,
+                    "ATK": 180,
+                    "DEF": 180
+                },
+                "Top Right": {
+                    "HP": 186,
+                    "ATK": 420,
+                    "DEF": 186
+                },
+                "Bottom Left": {
+                    "HP": 414,
+                    "ATK": 180,
+                    "DEF": 414
+                },
+                "Bottom Right": {
+                    "HP": 780,
+                    "ATK": 1020,
+                    "DEF": 1260
+                }
+            }
+        }
+    },
+    {
+        "Type": "INT",
+        "Rank": {
+            "S": {
+                "Free Dupe": {
+                    "HP": 2800,
+                    "ATK": 2800,
+                    "DEF": 2800
+                },
+                "Top Left": {
+                    "HP": 420,
+                    "ATK": 420,
+                    "DEF": 420
+                },
+                "Top Right": {
+                    "HP": 434,
+                    "ATK": 980,
+                    "DEF": 434
+                },
+                "Bottom Left": {
+                    "HP": 966,
+                    "ATK": 420,
+                    "DEF": 966
+                },
+                "Bottom Right": {
+                    "HP": 2380,
+                    "ATK": 2380,
+                    "DEF": 2380
+                }
+            },
+            "A": {
+                "Free Dupe": {
+                    "HP": 2000,
+                    "ATK": 2000,
+                    "DEF": 2000
+                },
+                "Top Left": {
+                    "HP": 300,
+                    "ATK": 300,
+                    "DEF": 300
+                },
+                "Top Right": {
+                    "HP": 310,
+                    "ATK": 700,
+                    "DEF": 310
+                },
+                "Bottom Left": {
+                    "HP": 690,
+                    "ATK": 300,
+                    "DEF": 690
+                },
+                "Bottom Right": {
+                    "HP": 1700,
+                    "ATK": 1700,
+                    "DEF": 1700
+                }
+            },
+            "B": {
+                "Free Dupe": {
+                    "HP": 1200,
+                    "ATK": 1200,
+                    "DEF": 1200
+                },
+                "Top Left": {
+                    "HP": 180,
+                    "ATK": 180,
+                    "DEF": 180
+                },
+                "Top Right": {
+                    "HP": 186,
+                    "ATK": 420,
+                    "DEF": 186
+                },
+                "Bottom Left": {
+                    "HP": 414,
+                    "ATK": 180,
+                    "DEF": 414
+                },
+                "Bottom Right": {
+                    "HP": 780,
+                    "ATK": 1020,
+                    "DEF": 1260
+                }
+            }
+        }
+    },
+    {
+        "Type": "STR",
+        "Rank": {
+            "S": {
+                "Free Dupe": {
+                    "HP": 2800,
+                    "ATK": 2800,
+                    "DEF": 2800
+                },
+                "Top Left": {
+                    "HP": 420,
+                    "ATK": 420,
+                    "DEF": 420
+                },
+                "Top Right": {
+                    "HP": 434,
+                    "ATK": 980,
+                    "DEF": 434
+                },
+                "Bottom Left": {
+                    "HP": 966,
+                    "ATK": 420,
+                    "DEF": 966
+                },
+                "Bottom Right": {
+                    "HP": 2380,
+                    "ATK": 2940,
+                    "DEF": 1820
+                }
+            },
+            "A": {
+                "Free Dupe": {
+                    "HP": 2000,
+                    "ATK": 2000,
+                    "DEF": 2000
+                },
+                "Top Left": {
+                    "HP": 300,
+                    "ATK": 300,
+                    "DEF": 300
+                },
+                "Top Right": {
+                    "HP": 310,
+                    "ATK": 700,
+                    "DEF": 310
+                },
+                "Bottom Left": {
+                    "HP": 690,
+                    "ATK": 300,
+                    "DEF": 690
+                },
+                "Bottom Right": {
+                    "HP": 1700,
+                    "ATK": 2100,
+                    "DEF": 1300
+                }
+            },
+            "B": {
+                "Free Dupe": {
+                    "HP": 1200,
+                    "ATK": 1200,
+                    "DEF": 1200
+                },
+                "Top Left": {
+                    "HP": 180,
+                    "ATK": 180,
+                    "DEF": 180
+                },
+                "Top Right": {
+                    "HP": 186,
+                    "ATK": 420,
+                    "DEF": 186
+                },
+                "Bottom Left": {
+                    "HP": 414,
+                    "ATK": 180,
+                    "DEF": 414
+                },
+                "Bottom Right": {
+                    "HP": 780,
+                    "ATK": 1020,
+                    "DEF": 1260
+                }
+            }
+        }
+    },
+    {
+        "Type": "PHY",
+        "Rank": {
+            "S": {
+                "Free Dupe": {
+                    "HP": 2800,
+                    "ATK": 2800,
+                    "DEF": 2800
+                },
+                "Top Left": {
+                    "HP": 420,
+                    "ATK": 420,
+                    "DEF": 420
+                },
+                "Top Right": {
+                    "HP": 434,
+                    "ATK": 980,
+                    "DEF": 434
+                },
+                "Bottom Left": {
+                    "HP": 966,
+                    "ATK": 420,
+                    "DEF": 966
+                },
+                "Bottom Right": {
+                    "HP": 2940,
+                    "ATK": 2380,
+                    "DEF": 1820
+                }
+            },
+            "A": {
+                "Free Dupe": {
+                    "HP": 2000,
+                    "ATK": 2000,
+                    "DEF": 2000
+                },
+                "Top Left": {
+                    "HP": 300,
+                    "ATK": 300,
+                    "DEF": 300
+                },
+                "Top Right": {
+                    "HP": 310,
+                    "ATK": 700,
+                    "DEF": 310
+                },
+                "Bottom Left": {
+                    "HP": 690,
+                    "ATK": 300,
+                    "DEF": 690
+                },
+                "Bottom Right": {
+                    "HP": 2100,
+                    "ATK": 1700,
+                    "DEF": 1300
+                }
+            },
+            "B": {
+                "Free Dupe": {
+                    "HP": 1200,
+                    "ATK": 1200,
+                    "DEF": 1200
+                },
+                "Top Left": {
+                    "HP": 180,
+                    "ATK": 180,
+                    "DEF": 180
+                },
+                "Top Right": {
+                    "HP": 186,
+                    "ATK": 420,
+                    "DEF": 186
+                },
+                "Bottom Left": {
+                    "HP": 414,
+                    "ATK": 180,
+                    "DEF": 414
+                },
+                "Bottom Right": {
+                    "HP": 780,
+                    "ATK": 1020,
+                    "DEF": 1260
+                }
+            }
+        }
+    },
+    {
+        "Type": "Standard",
+        "Free Dupe": {
+            "Recovery": 6,
+            "Super Attack Boost": 6,
+            "Type DEF Boost": 5,
+            "Type ATK Boost": 6
+        },
+        "Top Left": {
+            "Recovery": 1,
+            "Super Attack Boost": 1,
+            "Type DEF Boost": 1,
+            "Type ATK Boost": 1
+        },
+        "Top Right": {
+            "Recovery": 1,
+            "Super Attack Boost": 1,
+            "Type DEF Boost": 1,
+            "Type ATK Boost": 1
+        },
+        "Bottom Left": {
+            "Recovery": 1,
+            "Super Attack Boost": 1,
+            "Type DEF Boost": 1,
+            "Type ATK Boost": 1
+        },
+        "Bottom Right": {
+            "Recovery": 1,
+            "Super Attack Boost": 1,
+            "Type DEF Boost": 1,
+            "Type ATK Boost": 1
+        }
+    }
+]

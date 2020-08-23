@@ -1,0 +1,20 @@
+<mat-card class="">
+    <mat-card-title>Simulation Settings</mat-card-title>
+    <mat-form-field>
+        Number of turns:<input matInput type=number [matAutocomplete]="auto">
+    </mat-form-field>
+    <mat-autocomplete #auto="matAutocomplete">
+        <mat-option [value]="10">10</mat-option>
+        <mat-option [value]="100">100</mat-option>
+        <mat-option [value]="1000">1000</mat-option>
+    </mat-autocomplete>
+    <mat-form-field>
+        Repetitions:<input matInput type=number [matAutocomplete]="autoRepetitions">
+    </mat-form-field>
+    <mat-autocomplete #autoRepetitions="matAutocomplete">
+        <mat-option [value]="10">10</mat-option>
+        <mat-option [value]="100">100</mat-option>
+        <mat-option [value]="1000">1000</mat-option>
+    </mat-autocomplete>
+    <button mat-raised-button color="primary" (click)="runSimulation()">Run Simulation</button>
+</mat-card>

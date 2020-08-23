@@ -1,12 +1,30 @@
-/* You can add global styles to this file, and also import other style files */
+@import '@angular/material/prebuilt-themes/indigo-pink.css';
 
 html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+body { 
+    margin: 0; 
+    font-family: Roboto, Helvetica Neue Light, Helvetica Neue, Helvetica, Arial, Lucida Grande, sans-serif; 
+}
 
-@import '@angular/material/prebuilt-themes/deeppurple-amber.css';
+.cdk-overlay-pane {
+    max-width: 95% !important;
+    overflow: hidden;
+}
 
-.custom-scrollable-dialog {
-    overflow: auto;
+.cdk-global-overlay-wrapper {
+    align-items: baseline !important;
+    top: 6%;
+    height: 90%;
+}
+
+.character-results {
+    height: 400px;
+    max-height: 100%;
+    overflow: scroll;
+}
+
+.mat-form-field {
+    margin-right: 25px;
 }
 
 .mat-checkbox-layout {
@@ -15,4 +33,67 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .mat-label {
     margin-right: 10px;
+}
+
+.mat-card {
+    margin: 10px;
+}
+
+.mat-icon {
+    // display: block;
+    // margin-left: auto;
+    // margin-right: auto;
+    vertical-align: middle;
+    
+  }
+
+  .mat-fab .mat-button-wrapper {
+    padding: 13px !important;
+}
+
+img {
+    max-width:100%;
+    height:auto;
+}
+
+.mat-slide-toggle-label-before .mat-slide-toggle-bar, .mat-slide-toggle-bar {
+    margin-right: 5px !important;
+}
+
+.mat-slider{
+    padding: 4px !important;
+}
+
+.mat-form-field-type-mat-select {
+    min-width: 60px;
+    max-width: 25%;
+}
+
+section {
+    margin-bottom: 10px;
+}
+
+/* width */
+::-webkit-scrollbar {
+    width: 10px;
+}
+  
+/* Track */
+::-webkit-scrollbar-track {
+background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+background: #555;
+}
+
+
+h5 {
+    margin-top: 0px;
 }

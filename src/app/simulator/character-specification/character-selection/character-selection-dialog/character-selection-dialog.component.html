@@ -1,1 +1,82 @@
-<input type="image" *ngFor="let character of characterList" src="{{ character.ImageSRC }}" style="width: 105px" matTooltip="{{character.Name + ' - ' + character.Title}}" (click)="selectCharacter(character)"/>
+<div id="search-component">
+  <section class="searchandfilter">
+    <section>
+      <h4><label for="search-box">Character Search</label></h4>
+      <mat-form-field>
+        <input [(ngModel)]="inputSearchString" id="search-box" matInput placeholder="Search by name or title" />
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Type</mat-label>
+        <mat-select [(value)]="typeSelected">
+          <mat-option value="">--</mat-option>
+          <mat-option value="AGL">AGL</mat-option>
+          <mat-option value="TEQ">TEQ</mat-option>
+          <mat-option value="INT">INT</mat-option>
+          <mat-option value="STR">STR</mat-option>
+          <mat-option value="PHY">PHY</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <mat-form-field>
+        <mat-label>Class</mat-label>
+        <mat-select [(value)]="classSelected">
+          <mat-option value="">--</mat-option>
+          <mat-option value="Super">Super</mat-option>
+          <mat-option value="Extreme">Extreme</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <section>
+        <mat-form-field>
+          <mat-label>Category</mat-label>
+          <mat-select [(value)]="firstCategoryFilter">
+            <mat-option value="">--</mat-option>
+            <mat-option *ngFor="let category of categoriesDropdown" value="{{category}}">{{category}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Category Operator</mat-label>
+          <mat-select [(value)]="categoryOperator">
+            <mat-option value="and">And</mat-option>
+            <mat-option value="or">Or</mat-option>
+          </mat-select>
+        </mat-form-field>
+
+        <mat-form-field>
+          <mat-label>Category</mat-label>
+          <mat-select [(value)]="secondCategoryFilter">
+            <mat-option value="">--</mat-option>
+            <mat-option *ngFor="let category of categoriesDropdown" value="{{category}}">{{category}}</mat-option>
+          </mat-select>
+        </mat-form-field>
+      </section>
+    </section>
+
+  <section>
+    <section>
+      <mat-form-field class="order">
+        <mat-label>Order By</mat-label>
+        <mat-select [(value)]="orderBy">
+          <mat-option value="">--</mat-option>
+          <mat-option value="MaxHP">HP</mat-option>
+          <mat-option value="MaxATK">ATK</mat-option>
+          <mat-option value="MaxDEF">DEF</mat-option>
+          <mat-option value="Name">Name</mat-option>
+          <mat-option value="MaxLevel">Max Level</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button mat-fab color="" class="order-characters-button" aria-label="Ascending / Descending"
+        (click)="changeSortOrder()">
+        <mat-icon class="material-icons-round">sort</mat-icon>
+      </button>
+    </section>
+  </section>
+
+  </section>
+  <section class="character-results">
+    <input type="image" *ngFor="let character of characterList 
+      | filteredCharacterList:inputSearchString:typeSelected:classSelected:firstCategoryFilter:secondCategoryFilter:categoryOperator 
+      | sortCharacterList:descending:orderBy" src="{{ character.ImageSRC }}"
+      matTooltip="{{character.Name + ' - ' + character.Title+ ' - ' + character.MaxATK}}"
+      (click)="selectCharacter(character)" />
+  </section>
+</div>

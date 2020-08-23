@@ -1,28 +1,33 @@
-<mat-card class="character-specification">
-    <div class="character-details">
+<mat-card class="character-specification mat-elevation-z8">
+    <mat-card-title>Character Settings</mat-card-title>
+    <section class="character-details">
         <div class="character-selection-section">
             <app-character-selection (characterSelected)="characterSelected($event)"></app-character-selection>
         </div>
-        <div class="character-details-section">
+        <div class="character-details-section" *ngIf="selectedCharacter !== undefined">
             <div>
                 <h2>
                     <span class="character-title">{{selectedCharacter?.Title}}</span> -
                     <span class="character-name">{{selectedCharacter?.Name}}</span>
                 </h2>
-
             </div>
-            <div>
-                <span class="character-level">Lv {{selectedCharacter?.MaxLevel}}</span>
-                <span class="character-hp">HP {{selectedCharacter?.MaxHP}}</span>
-                <span class="character-attack">ATK {{selectedCharacter?.MaxATK}}</span>
-                <span class="character-defence">DEF {{selectedCharacter?.MaxDEF}}</span>
+            <div class="div-characterstats">
+                <div class="character-hp character-stat">Lvl: {{selectedCharacter?.MaxLevel}}</div>
+                <div class="character-hp character-stat">HP: {{selectedCharacter?.MaxHP + hiddenPotentialHPBoost}}</div>
+                <div class="character-attack character-stat">ATK:
+                    {{selectedCharacter?.MaxATK + hiddenPotentialATKBoost}}</div>
+                <div class="character-defence character-stat">DEF:
+                    {{selectedCharacter?.MaxDEF + hiddenPotentialDEFBoost}}</div>
             </div>
         </div>
-    </div>
-    <div class="character-customisation-section">
-        <app-character-customisation [character]="selectedCharacter"></app-character-customisation>
-    </div>
-    <div *ngIf="simulationType === 'single'" class="character-customisation-section">
+    </section>
+    <section class="character-customisation-section">
+        <app-character-customisation [character]="selectedCharacter" (freeDupeEvent)="freeDupeEvent($event)"
+            (topLeftEvent)="topLeftEvent($event)" (topRightEvent)="topRightEvent($event)"
+            (bottomLeftEvent)="bottomLeftEvent($event)" (bottomRightEvent)="bottomRightEvent($event)"
+            (rainbowEvent)="rainbowEvent($event)"></app-character-customisation>
+    </section>
+    <section *ngIf="simulationType === 'single'" class="character-customisation-section">
         <app-character-single-customisation [character]="selectedCharacter"></app-character-single-customisation>
-    </div>
+    </section>
 </mat-card>

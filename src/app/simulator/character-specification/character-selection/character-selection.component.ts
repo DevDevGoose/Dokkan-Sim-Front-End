@@ -16,18 +16,20 @@ export class CharacterSelectionComponent implements OnInit {
 
   constructor(
     public dialog: MatDialog,
-    ) { }
+  ) { }
 
   ngOnInit() {
   }
 
 
   openDialog(): void {
-    this.dialog.open(CharacterSelectionDialogComponent, { panelClass: 'custom-scrollable-dialog' })
-    .afterClosed()
-    .subscribe(result => {
-      this.characterSelected.emit(result);
-      this.ImageSRC = result.ImageSRC;
-    });
+    this.dialog.open(CharacterSelectionDialogComponent, { panelClass: 'custom-scrollable-dialog',  })
+      .afterClosed()
+      .subscribe(result => {
+        if (result !== undefined) {
+          this.characterSelected.emit(result);
+          this.ImageSRC = result.ImageSRC;
+        }
+      });
   }
 }

@@ -1,3 +1,12 @@
-<a (click)="openDialog()" style="width: 100px; height: 100px;">
-    <img class="character-selection-icon" src="{{ImageSRC}}" style="width: 100px; height: 100px;" alt="Selected Character">
-</a>
+<div class="character-selection-image-button">
+    <a *ngIf="ImageSRC !== ''; else elseBlock" (click)="openDialog()">
+        <img  class="character-selection-icon" [src]="ImageSRC"
+            alt="Selected Character">
+    </a>
+</div>
+
+<ng-template #elseBlock class="example-button-container">
+    <button mat-fab color="" class="character-selection-button"aria-label="Click here to select a character" (click)="openDialog()"> 
+        <mat-icon>add</mat-icon>
+    </button>
+</ng-template>

@@ -6,11 +6,12 @@ import { MatFormFieldModule } from '@angular/material/form-field';
 import { CharacterSpecificationModule } from './character-specification/character-specification.module';
 import { SharedModule } from '../shared/shared.module';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { SimulationSettingsComponent } from './simulation-settings/simulation-settings.component';
 
 
 
 @NgModule({
-  declarations: [SimulatorComponent],
+  declarations: [SimulatorComponent, SimulationSettingsComponent],
   imports: [
     CommonModule,
     MatTabsModule,

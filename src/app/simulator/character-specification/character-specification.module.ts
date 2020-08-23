@@ -12,6 +12,8 @@ import { CharacterSelectionDialogComponent } from './character-selection/charact
 import { NgMaterialModule } from 'src/app/ng-material/ng-material.module';
 import {FormsModule, ReactiveFormsModule} from '@angular/forms';
 import { CharacterSingleCustomisationComponent } from './character-single-customisation/character-single-customisation.component';
+import { FilteredCharacterListPipe } from './character-selection/character-selection-dialog/filtered-character-list.pipe';
+import { SortCharacterListPipe } from './character-selection/character-selection-dialog/sort-character-list.pipe';
 
 
 
@@ -21,7 +23,9 @@ import { CharacterSingleCustomisationComponent } from './character-single-custom
     CharacterCustomisationComponent,
     CharacterSelectionComponent,
     CharacterSelectionDialogComponent,
-    CharacterSingleCustomisationComponent
+    CharacterSingleCustomisationComponent,
+    FilteredCharacterListPipe,
+    SortCharacterListPipe
   ],
 
   imports: [

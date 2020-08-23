@@ -1,9 +1,15 @@
-.character-specification {
-    background-color: red;
-    border: 5px solid black;
-    
-}
-
 .character-details {
     display: flex;
+}
+
+.character-details-section {
+    margin-left: 10px;
+}
+
+.div-characterstats {
+    display: flex;
+}
+
+.character-stat {
+    margin-right: 15px;
 }
